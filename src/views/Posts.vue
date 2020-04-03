@@ -27,7 +27,7 @@
 <style scoped>
 
   .page-container {
-    padding: 200px 0;
+    padding: 200px 0 600px;
     width: 1200px;
     margin: 0 auto;
     text-align: left;

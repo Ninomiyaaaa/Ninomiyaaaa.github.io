@@ -57,6 +57,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9;
     width: 100%;
     transition: all 500ms linear;
   }

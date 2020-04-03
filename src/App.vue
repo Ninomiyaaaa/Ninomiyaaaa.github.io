@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <top-navigator></top-navigator>
-    <transition name="slide-left">
+    <transition name="custom-classes-transition"
+                enter-active-class="animated faster fadeInLeft"
+                leave-active-class="animated faster fadeOutRight"
+                mode="out-in">
       <router-view/>
     </transition>
     <bottom-tail></bottom-tail>
@@ -14,6 +17,10 @@
     components: {
       TopNavigator: resolve => require(['@/components/TopNavigator.vue'], resolve),
       BottomTail: resolve => require(['@/components/BottomTail.vue'], resolve),
+    },
+    data() {
+      return {
+      }
     },
     watch: {
       $route(to, from) {
@@ -139,4 +146,5 @@
     margin: 0;
     padding-top: 70px;
   }
+
 </style>
