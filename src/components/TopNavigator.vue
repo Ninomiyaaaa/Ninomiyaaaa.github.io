@@ -1,23 +1,28 @@
 <template>
-  <div id="container" class="container">
+  <div id="container" class="container" :class="transparent?'transparent':''">
     <div class="logo">
-      <img class="logo-img" src="@/assets/images/arashi5.png" alt="">
+      <router-link :to="{path:'/'}">
+        <img class="logo-img" src="@/assets/images/arashi5.png">
+      </router-link>
     </div>
     <ul class="navigator-list flex-list">
-      <li class="navigator-item " v-for="i in 3">
-        <a href="#">{{`item${i}`}}</a>
+      <li class="navigator-item " v-for="(item,index) in navigator" :key="index">
+        <router-link :to="item.path">{{item.meta.name}}</router-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+  import navigator from '@/router/navigator.js'
+
   export default {
     name: "TopNavigator",
     data() {
       return {
         scrollTop: 0,
-        transParent: false,
+        transparent: false,
+        navigator: navigator,
       }
     },
     mounted() {
@@ -25,14 +30,15 @@
         this.scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       }.bind(this)
     },
-    methods: {},
+    methods: {
+    },
     watch: {
       scrollTop: {
-        handler: function (newVal) {
-          if (newVal > 200 && !this.transParent) {
-            this.transParent = true
-          } else if (newVal < 200 && this.transParent) {
-            this.transParent = false
+        handler: function (newVal, oldVal) {
+          if (newVal > 200 && oldVal <= 200) {
+            this.transparent = true
+          } else if (newVal < 200 && oldVal > 200) {
+            this.transparent = false
           }
         },
       },
@@ -52,12 +58,13 @@
     top: 0;
     left: 0;
     width: 100%;
+    transition: all 500ms linear;
   }
 
 
   .transparent {
     background-color: transparent;
-    transition: all 2s linear;
+    transition: all 500ms linear;
   }
 
   .logo-img {

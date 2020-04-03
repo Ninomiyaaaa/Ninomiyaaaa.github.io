@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <router-view/>
+    <top-navigator></top-navigator>
+    <transition name="slide-left">
+      <router-view/>
+    </transition>
+    <bottom-tail></bottom-tail>
   </div>
 </template>
 
 <script>
   export default {
     name: 'App',
+    components: {
+      TopNavigator: resolve => require(['@/components/TopNavigator.vue'], resolve),
+      BottomTail: resolve => require(['@/components/BottomTail.vue'], resolve),
+    },
+    watch: {
+      $route(to, from) {
+        if (to.meta.title) {
+          document.title = to.meta.title
+        }
+      },
+    },
   }
 </script>
 
@@ -107,8 +122,12 @@
     display: block;
   }
 
-  *{
+  * {
     box-sizing: border-box;
+  }
+
+  img {
+    width: 100%;
   }
 </style>
 
@@ -118,5 +137,6 @@
     text-align: center;
     color: #2c3e50;
     margin: 0;
+    padding-top: 70px;
   }
 </style>
