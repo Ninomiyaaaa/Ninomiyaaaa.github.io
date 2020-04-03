@@ -1,0 +1,2 @@
+webpackJsonp([3],{"3QL8":function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var i={render:function(){this.$createElement;this._self._c;return this._m(0)},staticRenderFns:[function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"container"},[e("p",[this._v("我是小尾巴（还没想好放什么）")])])}]};var s=n("VU/8")({name:"BottomTail"},i,!1,function(t){n("5lL9")},"data-v-78107575",null);e.default=s.exports},"5lL9":function(t,e){}});
+//# sourceMappingURL=3.6bdf35eca03899b18d06.js.map

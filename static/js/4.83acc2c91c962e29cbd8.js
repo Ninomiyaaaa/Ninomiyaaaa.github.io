@@ -1,0 +1,2 @@
+webpackJsonp([4],{"7nTF":function(e,n){},aMPd:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("let's drink")])},staticRenderFns:[]};var a=t("VU/8")({name:"Coffee"},r,!1,function(e){t("7nTF")},"data-v-7316c68e",null);n.default=a.exports}});
+//# sourceMappingURL=4.83acc2c91c962e29cbd8.js.map
