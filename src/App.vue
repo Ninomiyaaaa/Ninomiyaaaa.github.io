@@ -2,8 +2,8 @@
   <div id="app">
     <top-navigator></top-navigator>
     <transition name="custom-classes-transition"
-                enter-active-class="animated faster fadeInLeft"
-                leave-active-class="animated faster fadeOutRight"
+                :enter-active-class="isMounted?'animated faster fadeInLeft':''"
+                :leave-active-class="isMounted?'animated faster fadeOutRight':''"
                 mode="out-in">
       <router-view/>
     </transition>
@@ -20,6 +20,7 @@
     },
     data() {
       return {
+        isMounted: false,
       }
     },
     watch: {
@@ -28,6 +29,11 @@
           document.title = to.meta.title
         }
       },
+    },
+    mounted() {
+      setTimeout(function () {
+        this.isMounted = true
+      }.bind(this), 1000)
     },
   }
 </script>
