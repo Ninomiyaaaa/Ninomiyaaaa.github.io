@@ -199,10 +199,10 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-bottom: 10px;
-    margin-top: 50px;
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
     z-index: 2;
     user-select: none;
   }
@@ -210,6 +210,7 @@
   .desc-container {
     position: relative;
     z-index: 0;
+    margin-top: 150px;
   }
 
   .mine-desc {

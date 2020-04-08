@@ -1,13 +1,6 @@
 <template>
   <div id="app">
-    <top-navigator></top-navigator>
-    <transition name="custom-classes-transition"
-                :enter-active-class="isMounted?'animated faster fadeInLeft':''"
-                :leave-active-class="isMounted?'animated faster fadeOutRight':''"
-                mode="out-in">
-      <router-view/>
-    </transition>
-    <bottom-tail></bottom-tail>
+    <index-page/>
   </div>
 </template>
 
@@ -15,25 +8,7 @@
   export default {
     name: 'App',
     components: {
-      TopNavigator: resolve => require(['@/components/TopNavigator.vue'], resolve),
-      BottomTail: resolve => require(['@/components/BottomTail.vue'], resolve),
-    },
-    data() {
-      return {
-        isMounted: false,
-      }
-    },
-    watch: {
-      $route(to, from) {
-        if (to.meta.title) {
-          document.title = to.meta.title
-        }
-      },
-    },
-    mounted() {
-      setTimeout(function () {
-        this.isMounted = true
-      }.bind(this), 1000)
+      IndexPage: resolve => require(['@/views/Index.vue'], resolve),
     },
   }
 </script>

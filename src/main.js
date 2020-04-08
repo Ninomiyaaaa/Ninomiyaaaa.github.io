@@ -3,7 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueLazyload from 'vue-lazyload'
 import 'animate.css'
+
+Vue.use(VueLazyload, {
+  attempt: 3,
+  listenEvents: ['animationend'],
+})
 
 Vue.config.productionTip = false
 

@@ -15,5 +15,15 @@ export default ([
       time: '2020-04-03',
     },
   },
+  {
+    path: '/Posts/blog200408',
+    name: 'blog200408',
+    component: () => import('@/views/posts/blog200408.vue'),
+    meta: {
+      name: 'Flutter第一天',
+      title: 'Flutter第一天',
+      time: '2020-04-08',
+    },
+  },
 ])
 
